@@ -54,13 +54,17 @@
 
   .control-bar{
     margin:24px 0 20px;
-    display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
-    gap:16px;
+    display:flex; flex-direction:column; align-items:center;
+    gap:14px;
     background:linear-gradient(180deg, #2c170c, #1c0f07);
     border:1px solid rgba(201,162,39,0.35);
     border-radius:18px;
-    padding:14px 26px;
+    padding:16px 26px;
     box-shadow:inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 24px rgba(0,0,0,0.4);
+  }
+  .control-row{
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+    gap:16px; width:100%;
   }
   .control-group{ display:flex; align-items:center; gap:10px; }
   .control-cluster{ display:flex; align-items:center; gap:16px; flex-wrap:nowrap; }
@@ -213,34 +217,38 @@
 </header>
 
 <div class="control-bar">
-  <div class="control-group">
-    <label for="oldKeySelect">현재 장조</label>
-    <select id="oldKeySelect"></select>
-  </div>
-  <div class="arrow-sep">→</div>
-  <div class="control-group">
-    <label for="newKeySelect">바꿀 장조</label>
-    <select id="newKeySelect"></select>
-  </div>
-  <div class="control-cluster">
+  <div class="control-row">
     <div class="control-group">
-      <label>현 수</label>
-      <div class="toggle-group">
-        <button type="button" id="btn21" class="toggle-btn active">21현</button>
-        <button type="button" id="btn14" class="toggle-btn">14현</button>
-      </div>
+      <label for="oldKeySelect">현재 장조</label>
+      <select id="oldKeySelect"></select>
     </div>
-    <div class="control-group volume-group">
-      <div class="volume-row">
-        <label for="volume">볼륨</label>
-        <input type="range" id="volume" min="0" max="100" value="15">
-        <span id="volLabel">15%</span>
+    <div class="arrow-sep">→</div>
+    <div class="control-group">
+      <label for="newKeySelect">바꿀 장조</label>
+      <select id="newKeySelect"></select>
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control-cluster">
+      <div class="control-group">
+        <label>현 수</label>
+        <div class="toggle-group">
+          <button type="button" id="btn21" class="toggle-btn active">21현</button>
+          <button type="button" id="btn14" class="toggle-btn">14현</button>
+        </div>
       </div>
-      <div class="volume-presets">
-        <button type="button" class="vol-preset-btn" data-vol="15">15%</button>
-        <button type="button" class="vol-preset-btn" data-vol="50">50%</button>
-        <button type="button" class="vol-preset-btn" data-vol="70">70%</button>
-        <button type="button" class="vol-preset-btn" data-vol="100">100%</button>
+      <div class="control-group volume-group">
+        <div class="volume-row">
+          <label for="volume">볼륨</label>
+          <input type="range" id="volume" min="0" max="100" value="15">
+          <span id="volLabel">15%</span>
+        </div>
+        <div class="volume-presets">
+          <button type="button" class="vol-preset-btn" data-vol="15">15%</button>
+          <button type="button" class="vol-preset-btn" data-vol="50">50%</button>
+          <button type="button" class="vol-preset-btn" data-vol="70">70%</button>
+          <button type="button" class="vol-preset-btn" data-vol="100">100%</button>
+        </div>
       </div>
     </div>
   </div>
